@@ -1,6 +1,14 @@
 package com.example.rso_seminarska;
 
+import java.util.ArrayList;
+
 public class Train extends Vehicle{
+    public Train(String vehicleName, String driverName, ArrayList<String> station, ArrayList<String> daysOfDriving, ArrayList<Integer> timetableHours, ArrayList<Integer> timetableMinutes){
+
+    }
+    public Train(){
+
+    }
     @Override
     public void allDataPrintout() {
         System.out.println("Ime vlaka: "+ vehicleName);

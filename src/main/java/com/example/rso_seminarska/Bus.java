@@ -1,6 +1,15 @@
 package com.example.rso_seminarska;
 
+import java.util.ArrayList;
+
 public class Bus extends Vehicle{
+
+    public Bus(String vehicleName, String driverName, ArrayList<String> station, ArrayList<String> daysOfDriving, ArrayList<Integer> timetableHours, ArrayList<Integer> timetableMinutes){
+
+    }
+    public Bus(){
+
+    }
     @Override
     public void allDataPrintout() {
         System.out.println("Ime avtobusa: "+ vehicleName);

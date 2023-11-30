@@ -8,9 +8,14 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Objects;
 
+
 public class PublicTransportApplication extends Application {
+    static ArrayList<Bus> BUS = new ArrayList<>();
+    static ArrayList<Train> TRAIN = new ArrayList<>();
+
     @Override
     @FXML
     public void start(Stage stage) throws IOException {
@@ -20,7 +25,6 @@ public class PublicTransportApplication extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
     public static void main(String[] args) {
         launch();
     }
