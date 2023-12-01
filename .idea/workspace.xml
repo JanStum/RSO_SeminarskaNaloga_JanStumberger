@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d285e06-cbcf-4643-983e-0b9b6fd306dd" name="Changes" comment="bla bla">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/Bus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/ChangeVehicleSceneController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/NewVehicleSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/NewVehicleSceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/PrintoutVehicleDataSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/PrintoutVehicleDataSceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/Train.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/Train.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/rso_seminarska/AdministratorScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/rso_seminarska/AdministratorScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/rso_seminarska/ChangeVehicleScene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/rso_seminarska/NewVehicleScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/rso_seminarska/NewVehicleScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +47,9 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/K01-DM-07/AppData/Local/SceneBuilder/SceneBuilder.exe",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
@@ -128,15 +133,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="bla bla" />
     <option name="LAST_COMMIT_MESSAGE" value="bla bla" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.ClassNotFoundException" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

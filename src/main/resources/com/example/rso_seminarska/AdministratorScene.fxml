@@ -7,8 +7,7 @@
    <children>
       <Button layoutX="14.0" layoutY="124.0" mnemonicParsing="false" onAction="#createNewVehicle" text="Ustvari novo vozilo" />
       <Button layoutX="14.0" layoutY="169.0" mnemonicParsing="false" onAction="#removeVehicle" text="Izbriši vozilo" />
-      <Button layoutX="14.0" layoutY="214.0" mnemonicParsing="false" onAction="#changeVehicle" text="Spremeni vozilo" />
-      <Button layoutX="14.0" layoutY="303.0" mnemonicParsing="false" onAction="#switchToMenuScene" text="Nazaj" />
-      <Button layoutX="14.0" layoutY="259.0" mnemonicParsing="false" onAction="#printoutVehicleData" text="Izpiši podatke vozila" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToMenuScene" text="Nazaj" />
+      <Button layoutX="14.0" layoutY="208.0" mnemonicParsing="false" onAction="#printoutVehicleData" text="Izpiši podatke vozila" />
    </children>
 </AnchorPane>

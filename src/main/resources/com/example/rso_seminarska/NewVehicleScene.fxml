@@ -17,7 +17,7 @@
       <TextField fx:id="vehicleNameLabel" layoutX="97.0" layoutY="121.0" />
       <TextField fx:id="driverNameLabel" layoutX="115.0" layoutY="153.0" />
       <ChoiceBox fx:id="vehicleTypeChoiceBox" layoutX="108.0" layoutY="91.0" prefWidth="150.0" />
-      <Button layoutX="83.0" layoutY="294.0" mnemonicParsing="false" onAction="#create" text="Ustvari" />
+      <Button layoutX="83.0" layoutY="294.0" mnemonicParsing="false" onAction="#create" text="Ustvari"  />
       <CheckBox fx:id="ponedeljekCheckBox" layoutX="330.0" layoutY="86.0" mnemonicParsing="false" text="Ponedeljek" />
       <CheckBox fx:id="torekCheckBox" layoutX="330.0" layoutY="106.0" mnemonicParsing="false" text="Torek" />
       <CheckBox fx:id="sredaCheckBox" layoutX="330.0" layoutY="124.0" mnemonicParsing="false" text="Sreda" />

@@ -5,7 +5,6 @@ import javafx.scene.control.TextArea;
 import java.util.ArrayList;
 
 public class Bus extends Vehicle{
-
     public Bus(String vehicleName, String driverName, ArrayList<String> station, ArrayList<String> daysOfDriving, ArrayList<Integer> timetableHours, ArrayList<Integer> timetableMinutes){
 
     }

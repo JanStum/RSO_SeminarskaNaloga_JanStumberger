@@ -11,11 +11,12 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class NewVehicleSceneController implements Initializable {
+public class NewVehicleSceneController implements Initializable{
     @FXML
     protected ChoiceBox<String> vehicleTypeChoiceBox;
     @FXML
@@ -40,96 +41,89 @@ public class NewVehicleSceneController implements Initializable {
     protected Stage stage;
 
     ArrayList<String> stationName = new ArrayList<>();
+
     ArrayList<Integer> arrivalHours = new ArrayList<>();
     ArrayList<Integer> arrivalMinutes = new ArrayList<>();
-
     public void initialize(URL arg0, ResourceBundle arg1){
         vehicleTypeChoiceBox.getItems().addAll("Avtobus", "Vlak");
     }
     public void create(ActionEvent event){
 
         if (vehicleTypeChoiceBox.getValue().equals("Avtobus")){
-            PublicTransportApplication.BUS.add(new Bus());
-            ArrayList<String> daysOfDriving = new ArrayList<>();
-            PublicTransportApplication.BUS.getLast().setVehicleName(vehicleNameLabel.getText());
-            PublicTransportApplication.BUS.getLast().setDriverName(driverNameLabel.getText());
+            Bus bus = new Bus();
+            bus.setVehicleName(vehicleNameLabel.getText());
 
-            if (ponedeljekCheckBox.isSelected())
-                daysOfDriving.add(ponedeljekCheckBox.getText());
-            if (torekCheckBox.isSelected())
-                daysOfDriving.add(torekCheckBox.getText());
-            if (sredaCheckBox.isSelected())
-                daysOfDriving.add(sredaCheckBox.getText());
-            if (četrtekCheckBox.isSelected())
-                daysOfDriving.add(četrtekCheckBox.getText());
-            if (petekCheckBox.isSelected())
-                daysOfDriving.add(petekCheckBox.getText());
-            if (sobotaCheckBox.isSelected())
-                daysOfDriving.add(sobotaCheckBox.getText());
-            if (nedeljaCheckBox.isSelected())
-                daysOfDriving.add(nedeljaCheckBox.getText());
+            ArrayList<String> daysOfDriving = getCheckBoxes();
+            bus.setVehicleName(vehicleNameLabel.getText());
+            bus.setDriverName(driverNameLabel.getText());
 
-            PublicTransportApplication.BUS.getLast().setDaysOfDriving(daysOfDriving);
-            PublicTransportApplication.BUS.getLast().setStation(stationName);
-            PublicTransportApplication.BUS.getLast().setTimetableHours(arrivalHours);
-            PublicTransportApplication.BUS.getLast().setTimetableMinutes(arrivalMinutes);
+            bus.setDaysOfDriving(daysOfDriving);
+            bus.setStation((ArrayList<String>)stationName.clone());
+            bus.setTimetableHours((ArrayList<Integer>)arrivalHours.clone());
+            bus.setTimetableMinutes((ArrayList<Integer>)arrivalHours.clone());
 
+            PublicTransportApplication.BUS.add(bus);
             vehicleNameLabel.setText(null);
             driverNameLabel.setText(null);
             vehicleTypeChoiceBox.getSelectionModel().clearSelection();
 
-            ponedeljekCheckBox.setSelected(false);
-            torekCheckBox.setSelected(false);
-            sredaCheckBox.setSelected(false);
-            četrtekCheckBox.setSelected(false);
-            petekCheckBox.setSelected(false);
-            sobotaCheckBox.setSelected(false);
-            nedeljaCheckBox.setSelected(false);
-
+            stationName.clear();
+            arrivalHours.clear();
+            arrivalMinutes.clear();
+            disableCheckBoxes();
         }
         else if (vehicleTypeChoiceBox.getValue().equals("Vlak")) {
-            PublicTransportApplication.TRAIN.add(new Train());
-            ArrayList<String> daysOfDriving = new ArrayList<>();
-            PublicTransportApplication.TRAIN.getLast().setVehicleName(vehicleNameLabel.getText());
-            PublicTransportApplication.TRAIN.getLast().setDriverName(driverNameLabel.getText());
+            Train train = new Train();
+            train.setVehicleName(vehicleNameLabel.getText());
 
-            if (ponedeljekCheckBox.isSelected())
-                daysOfDriving.add(ponedeljekCheckBox.getText());
-            if (torekCheckBox.isSelected())
-                daysOfDriving.add(torekCheckBox.getText());
-            if (sredaCheckBox.isSelected())
-                daysOfDriving.add(sredaCheckBox.getText());
-            if (četrtekCheckBox.isSelected())
-                daysOfDriving.add(četrtekCheckBox.getText());
-            if (petekCheckBox.isSelected())
-                daysOfDriving.add(petekCheckBox.getText());
-            if (sobotaCheckBox.isSelected())
-                daysOfDriving.add(sobotaCheckBox.getText());
-            if (nedeljaCheckBox.isSelected())
-                daysOfDriving.add(nedeljaCheckBox.getText());
+            ArrayList<String> daysOfDriving = getCheckBoxes();
+            train.setVehicleName(vehicleNameLabel.getText());
+            train.setDriverName(driverNameLabel.getText());
 
-            PublicTransportApplication.TRAIN.getLast().setDaysOfDriving(daysOfDriving);
-            PublicTransportApplication.TRAIN.getLast().setStation(stationName);
-            PublicTransportApplication.TRAIN.getLast().setTimetableHours(arrivalHours);
-            PublicTransportApplication.TRAIN.getLast().setTimetableMinutes(arrivalMinutes);
+            train.setDaysOfDriving(daysOfDriving);
+            train.setStation((ArrayList<String>)stationName.clone());
+            train.setTimetableHours((ArrayList<Integer>)arrivalHours.clone());
+            train.setTimetableMinutes((ArrayList<Integer>)arrivalHours.clone());
 
+            PublicTransportApplication.TRAIN.add(train);
             vehicleNameLabel.setText(null);
             driverNameLabel.setText(null);
             vehicleTypeChoiceBox.getSelectionModel().clearSelection();
 
-            ponedeljekCheckBox.setSelected(false);
-            torekCheckBox.setSelected(false);
-            sredaCheckBox.setSelected(false);
-            četrtekCheckBox.setSelected(false);
-            petekCheckBox.setSelected(false);
-            sobotaCheckBox.setSelected(false);
-            nedeljaCheckBox.setSelected(false);
-
-            for (int i = 0; i < stationName.size(); i++){
-                stationName.remove(i);
-            }
+            stationName.clear();
+            arrivalHours.clear();
+            arrivalMinutes.clear();
+            disableCheckBoxes();
         }
 
+    }
+    private void disableCheckBoxes(){
+        ponedeljekCheckBox.setSelected(false);
+        torekCheckBox.setSelected(false);
+        sredaCheckBox.setSelected(false);
+        četrtekCheckBox.setSelected(false);
+        petekCheckBox.setSelected(false);
+        sobotaCheckBox.setSelected(false);
+        nedeljaCheckBox.setSelected(false);
+    }
+    private ArrayList<String> getCheckBoxes(){
+        ArrayList<String> daysOfDriving = new ArrayList<>();
+
+        if (ponedeljekCheckBox.isSelected())
+            daysOfDriving.add("Ponedeljek");
+        else if (torekCheckBox.isSelected())
+            daysOfDriving.add("Torek");
+        else if (sredaCheckBox.isSelected())
+            daysOfDriving.add("Sreda");
+        else if (sredaCheckBox.isSelected())
+            daysOfDriving.add("Četrtek");
+        else if (sredaCheckBox.isSelected())
+            daysOfDriving.add("Petek");
+        else if (sredaCheckBox.isSelected())
+            daysOfDriving.add("Sobota");
+        else if (sredaCheckBox.isSelected())
+            daysOfDriving.add("Nedelja");
+        return daysOfDriving;
     }
     public void addStation(ActionEvent event)throws IOException{
         stationName.add(stationNameTextField.getText());

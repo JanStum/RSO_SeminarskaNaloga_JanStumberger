@@ -38,7 +38,7 @@ public class PrintoutVehicleDataSceneController implements Initializable {
         }
     }
     public void printoutVehicleData(ActionEvent event)throws IOException{
-        if (vehicleChoiceBox.getValue().startsWith("Tip vozila: avtobus")){
+        if (vehicleChoiceBox.getValue().startsWith("Tip vozila: Avtobus")){
             for (int i = 0; i < PublicTransportApplication.BUS.size(); i++){
                 if (vehicleChoiceBox.getValue().endsWith(PublicTransportApplication.BUS.get(i).getVehicleName())){
                     PublicTransportApplication.BUS.get(i).allDataPrintout(vehicleDataTextArea);
@@ -47,7 +47,7 @@ public class PrintoutVehicleDataSceneController implements Initializable {
 
             //PublicTransportApplication.BUS.remove(vehicleIndex);
         }
-        else if (vehicleChoiceBox.getValue().startsWith("Tip vozila: vlak")){
+        else if (vehicleChoiceBox.getValue().startsWith("Tip vozila: Vlak")){
             for (int i = 0; i < PublicTransportApplication.TRAIN.size(); i++){
                 if (vehicleChoiceBox.getValue().endsWith(PublicTransportApplication.TRAIN.get(i).getVehicleName())){
                     PublicTransportApplication.TRAIN.get(i).allDataPrintout(vehicleDataTextArea);
