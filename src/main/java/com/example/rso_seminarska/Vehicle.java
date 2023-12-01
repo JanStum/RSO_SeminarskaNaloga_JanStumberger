@@ -1,5 +1,8 @@
 package com.example.rso_seminarska;
 
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+
 import java.util.ArrayList;
 
 public abstract class Vehicle {
@@ -113,5 +116,5 @@ public abstract class Vehicle {
     }
     // Metoda za izpis vseh podatkov vozila
     // Metoda nima vhodnih ali izhodnih podatkov
-    public abstract void allDataPrintout();
+    public abstract void allDataPrintout(TextArea vehicleDataTextArea);
 }

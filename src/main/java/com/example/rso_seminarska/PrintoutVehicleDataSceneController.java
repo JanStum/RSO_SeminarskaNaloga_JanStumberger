@@ -41,8 +41,7 @@ public class PrintoutVehicleDataSceneController implements Initializable {
         if (vehicleChoiceBox.getValue().startsWith("Tip vozila: avtobus")){
             for (int i = 0; i < PublicTransportApplication.BUS.size(); i++){
                 if (vehicleChoiceBox.getValue().endsWith(PublicTransportApplication.BUS.get(i).getVehicleName())){
-                    vehicleIndex = i;
-                    vehicleType = "avtobus";
+                    PublicTransportApplication.BUS.get(i).allDataPrintout(vehicleDataTextArea);
                 }
             }
 
@@ -51,11 +50,9 @@ public class PrintoutVehicleDataSceneController implements Initializable {
         else if (vehicleChoiceBox.getValue().startsWith("Tip vozila: vlak")){
             for (int i = 0; i < PublicTransportApplication.TRAIN.size(); i++){
                 if (vehicleChoiceBox.getValue().endsWith(PublicTransportApplication.TRAIN.get(i).getVehicleName())){
-                    vehicleIndex = i;
-                    vehicleType = "vlak";
+                    PublicTransportApplication.TRAIN.get(i).allDataPrintout(vehicleDataTextArea);
                 }
             }
-            //PublicTransportApplication.TRAIN.remove(vehicleIndex);
         }
     }
     public void switchToAdministratorScene(ActionEvent event)throws IOException{

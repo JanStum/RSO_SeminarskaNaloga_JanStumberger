@@ -39,7 +39,6 @@ public class NewVehicleSceneController implements Initializable {
     @FXML
     protected Stage stage;
 
-    ArrayList<String> daysOfDriving = new ArrayList<>();
     ArrayList<String> stationName = new ArrayList<>();
     ArrayList<Integer> arrivalHours = new ArrayList<>();
     ArrayList<Integer> arrivalMinutes = new ArrayList<>();
@@ -51,6 +50,7 @@ public class NewVehicleSceneController implements Initializable {
 
         if (vehicleTypeChoiceBox.getValue().equals("Avtobus")){
             PublicTransportApplication.BUS.add(new Bus());
+            ArrayList<String> daysOfDriving = new ArrayList<>();
             PublicTransportApplication.BUS.getLast().setVehicleName(vehicleNameLabel.getText());
             PublicTransportApplication.BUS.getLast().setDriverName(driverNameLabel.getText());
 
@@ -89,6 +89,7 @@ public class NewVehicleSceneController implements Initializable {
         }
         else if (vehicleTypeChoiceBox.getValue().equals("Vlak")) {
             PublicTransportApplication.TRAIN.add(new Train());
+            ArrayList<String> daysOfDriving = new ArrayList<>();
             PublicTransportApplication.TRAIN.getLast().setVehicleName(vehicleNameLabel.getText());
             PublicTransportApplication.TRAIN.getLast().setDriverName(driverNameLabel.getText());
 
@@ -124,6 +125,9 @@ public class NewVehicleSceneController implements Initializable {
             sobotaCheckBox.setSelected(false);
             nedeljaCheckBox.setSelected(false);
 
+            for (int i = 0; i < stationName.size(); i++){
+                stationName.remove(i);
+            }
         }
 
     }

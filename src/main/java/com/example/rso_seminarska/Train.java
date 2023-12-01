@@ -1,5 +1,7 @@
 package com.example.rso_seminarska;
 
+import javafx.scene.control.TextArea;
+
 import java.util.ArrayList;
 
 public class Train extends Vehicle{
@@ -10,17 +12,18 @@ public class Train extends Vehicle{
 
     }
     @Override
-    public void allDataPrintout() {
-        System.out.println("Ime vlaka: "+ vehicleName);
-        System.out.println("Ime voznika: "+ driverName);
-        String dd = "";
+    public void allDataPrintout(TextArea vehicleDataTextArea) {
+        String text = "Tip vozila:     Vlak\n";
+        text += "Ime vlaka:     " + vehicleName + "\n";
+        text += "Ime voznika:     " + driverName + "\n";
+        String drivingDays = daysOfDriving.get(0);
         for (int i=1; i<daysOfDriving.size(); i++){
-            dd = dd + "   " + daysOfDriving.get(i);
+            drivingDays += "     " + daysOfDriving.get(i);
         }
-        System.out.println("Dnevi vožnje v tednu: "+ dd);
-        for (int i=0; i<daysOfDriving.size(); i++){
-            System.out.println("postaja: " + station.get(i) + ",   prihod: " + timetableHours.get(i) + "h" + timetableMinutes.get(i) + "min");
+        text += "Dnevi vožnje v tednu:     " + drivingDays + "\n\n";
+        for (int i=0; i<station.size(); i++){
+            text += "Postaja:     " + station.get(i) + ",     Prihod:     " + timetableHours.get(i) + "h" + timetableMinutes.get(i) + "min\n";
         }
-        System.out.println();
+        vehicleDataTextArea.setText(text);
     }
 }
