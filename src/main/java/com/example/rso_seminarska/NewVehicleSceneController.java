@@ -127,14 +127,6 @@ public class NewVehicleSceneController implements Initializable {
         }
 
     }
-    public void switchToAdministratorScene(ActionEvent event)throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("AdministratorScene.fxml"));
-        root = loader.load();
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
     public void addStation(ActionEvent event)throws IOException{
         stationName.add(stationNameTextField.getText());
         arrivalHours.add(Integer.parseInt(arrivalHoursTextField.getText()));
@@ -143,5 +135,13 @@ public class NewVehicleSceneController implements Initializable {
         stationNameTextField.setText(null);
         arrivalHoursTextField.setText(null);
         arrivalMinutesTextField.setText(null);
+    }
+    public void switchToAdministratorScene(ActionEvent event)throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("AdministratorScene.fxml"));
+        root = loader.load();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }
