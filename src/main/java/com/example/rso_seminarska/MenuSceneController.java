@@ -17,7 +17,8 @@ import java.util.Objects;
 
 public class MenuSceneController {
     @FXML
-    protected PasswordField administratorPassword;
+    protected PasswordField administratorPasswordField;
+    @FXML
     protected Label wrongPasswordLabel;
     protected Stage stage;
     protected Scene scene;
@@ -32,13 +33,18 @@ public class MenuSceneController {
         stage.show();
     }
     public void administratorButton(ActionEvent event) throws IOException{
-        if (administratorPassword.getText().equals("1234")){
+        if (administratorPasswordField.getText().equals(AdministratorSceneController.PASSWORD)){
+            wrongPasswordLabel.setVisible(false);
             FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("AdministratorScene.fxml")));
             root = loader.load();
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+        }
+        else{
+            administratorPasswordField.setText(null);
+            wrongPasswordLabel.setVisible(true);
         }
 
     }

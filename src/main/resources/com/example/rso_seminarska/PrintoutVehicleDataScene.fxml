@@ -9,9 +9,9 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rso_seminarska.PrintoutVehicleDataSceneController">
    <children>
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToAdministratorScene" text="Nazaj" />
-      <Label layoutX="14.0" layoutY="58.0" text="Izberi vozilo:" />
-      <ChoiceBox fx:id="vehicleChoiceBox" layoutX="89.0" layoutY="54.0" prefHeight="25.0" prefWidth="433.0" />
-      <Button layoutX="533.0" layoutY="54.0" mnemonicParsing="false" onAction="#printoutVehicleData" text="Izberi" />
+      <Label layoutX="14.0" layoutY="58.0" prefHeight="16.0" prefWidth="87.0" text="Izberi vozilo:" />
+      <ChoiceBox fx:id="vehicleChoiceBox" layoutX="103.0" layoutY="54.0" prefHeight="25.0" prefWidth="405.0" />
+      <Button layoutX="516.0" layoutY="54.0" mnemonicParsing="false" onAction="#printoutVehicleData" prefHeight="24.0" prefWidth="62.0" text="Potrdi" />
       <TextArea fx:id="vehicleDataTextArea" layoutX="14.0" layoutY="91.0" prefHeight="292.0" prefWidth="566.0" />
    </children>
 </AnchorPane>

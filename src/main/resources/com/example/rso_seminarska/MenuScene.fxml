@@ -15,6 +15,11 @@
          </font>
       </Label>
       <Button layoutX="197.0" layoutY="215.0" mnemonicParsing="false" onAction="#administratorButton" text="Upravitelj" />
-      <PasswordField id="administratorPassword" fx:id="administratorPassword" layoutX="14.0" layoutY="215.0" promptText="Geslo" />
+      <PasswordField id="administratorPassword" fx:id="administratorPasswordField" layoutX="14.0" layoutY="215.0" promptText="Geslo" />
+      <Label fx:id="wrongPasswordLabel" layoutX="14.0" layoutY="239.0" prefHeight="16.0" prefWidth="171.0" text="Napačno geslo!" visible="false">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -111,18 +111,19 @@ public class NewVehicleSceneController implements Initializable{
 
         if (ponedeljekCheckBox.isSelected())
             daysOfDriving.add("Ponedeljek");
-        else if (torekCheckBox.isSelected())
+        if (torekCheckBox.isSelected())
             daysOfDriving.add("Torek");
-        else if (sredaCheckBox.isSelected())
+        if (sredaCheckBox.isSelected())
             daysOfDriving.add("Sreda");
-        else if (sredaCheckBox.isSelected())
+        if (četrtekCheckBox.isSelected())
             daysOfDriving.add("Četrtek");
-        else if (sredaCheckBox.isSelected())
+        if (petekCheckBox.isSelected())
             daysOfDriving.add("Petek");
-        else if (sredaCheckBox.isSelected())
+        if (sobotaCheckBox.isSelected())
             daysOfDriving.add("Sobota");
-        else if (sredaCheckBox.isSelected())
+        if (nedeljaCheckBox.isSelected())
             daysOfDriving.add("Nedelja");
+
         return daysOfDriving;
     }
     public void addStation(ActionEvent event)throws IOException{

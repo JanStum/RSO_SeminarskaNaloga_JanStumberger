@@ -31,10 +31,10 @@ public class PrintoutVehicleDataSceneController implements Initializable {
     protected Stage stage;
     public void initialize(URL arg0, ResourceBundle arg1){
         for (int i = 0; i < PublicTransportApplication.BUS.size(); i++){
-            vehicleChoiceBox.getItems().add("Tip vozila: avtobus     Ime vozila: " + PublicTransportApplication.BUS.get(i).getVehicleName());
+            vehicleChoiceBox.getItems().add("Tip vozila: Avtobus     Ime vozila: " + PublicTransportApplication.BUS.get(i).getVehicleName());
         }
         for (int i = 0; i < PublicTransportApplication.TRAIN.size(); i++) {
-            vehicleChoiceBox.getItems().add("Tip vozila: vlak     Ime vozila: " + PublicTransportApplication.TRAIN.get(i).getVehicleName());
+            vehicleChoiceBox.getItems().add("Tip vozila: Vlak     Ime vozila: " + PublicTransportApplication.TRAIN.get(i).getVehicleName());
         }
     }
     public void printoutVehicleData(ActionEvent event)throws IOException{
@@ -44,8 +44,6 @@ public class PrintoutVehicleDataSceneController implements Initializable {
                     PublicTransportApplication.BUS.get(i).allDataPrintout(vehicleDataTextArea);
                 }
             }
-
-            //PublicTransportApplication.BUS.remove(vehicleIndex);
         }
         else if (vehicleChoiceBox.getValue().startsWith("Tip vozila: Vlak")){
             for (int i = 0; i < PublicTransportApplication.TRAIN.size(); i++){
