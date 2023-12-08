@@ -83,13 +83,15 @@ public abstract class Vehicle {
     // Metoda za izpis voznega reda avtobusa
     // Vhodna podatka sta vstopna in izstopna postaja tipa String
     // Metoda ne vrne vračane vrednosti
-    public void timetablePrintout(String entryStation, String exitStation){
+    public void timetablePrintout(String entryStation, String exitStation, TextArea timetableTextArea){
+        String text = "";
         for (int i=0; i< station.size(); i++){
             if (station.get(i).equals(entryStation) || station.get(i).equals(exitStation))
-                System.out.println("    Postaja: " + station.get(i) + ",   prihod: " + timetableHours.get(i) + "h" + timetableMinutes.get(i) + "min");
+                text += "     Postaja:     " + station.get(i) + ",     prihod:     " + timetableHours.get(i) + "h" + timetableMinutes.get(i) + "min\n";
             else
-                System.out.println("Postaja: " + station.get(i) +  ",   prihod: " + timetableHours.get(i) + "h" + timetableMinutes.get(i) + "min");
+                text += "Postaja:     " + station.get(i) +  ",     prihod:     " + timetableHours.get(i) + "h" + timetableMinutes.get(i) + "min\n";
         }
+        timetableTextArea.setText(text);
     }
     // Metoda za izračun časa vožnje, glede na uporabnikov vpis vstopne in izstopne postaje
     // Vhodna podatka sta vstopna in izstopna postaja
@@ -112,7 +114,7 @@ public abstract class Vehicle {
         difference = minuend - subtrahend;
         hourDifference = difference/60;
         minuteDifference = difference - hourDifference*60;
-        return Integer.toString(hourDifference)+"h"+Integer.toString(minuteDifference)+"min";
+        return hourDifference + "h" + minuteDifference + "min";
     }
     // Metoda za izpis vseh podatkov vozila
     // Metoda nima vhodnih ali izhodnih podatkov

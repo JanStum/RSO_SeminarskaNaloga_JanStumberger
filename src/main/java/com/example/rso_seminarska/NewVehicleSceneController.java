@@ -60,7 +60,7 @@ public class NewVehicleSceneController implements Initializable{
             bus.setDaysOfDriving(daysOfDriving);
             bus.setStation((ArrayList<String>)stationName.clone());
             bus.setTimetableHours((ArrayList<Integer>)arrivalHours.clone());
-            bus.setTimetableMinutes((ArrayList<Integer>)arrivalHours.clone());
+            bus.setTimetableMinutes((ArrayList<Integer>)arrivalMinutes.clone());
 
             PublicTransportApplication.BUS.add(bus);
             vehicleNameLabel.setText(null);
@@ -83,7 +83,7 @@ public class NewVehicleSceneController implements Initializable{
             train.setDaysOfDriving(daysOfDriving);
             train.setStation((ArrayList<String>)stationName.clone());
             train.setTimetableHours((ArrayList<Integer>)arrivalHours.clone());
-            train.setTimetableMinutes((ArrayList<Integer>)arrivalHours.clone());
+            train.setTimetableMinutes((ArrayList<Integer>)arrivalMinutes.clone());
 
             PublicTransportApplication.TRAIN.add(train);
             vehicleNameLabel.setText(null);

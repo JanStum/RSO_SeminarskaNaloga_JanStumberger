@@ -47,11 +47,13 @@ public class UserSceneController implements Initializable {
         Train train;
         if (vehicleType.equals("Avtobus")){
             bus = findBus();
-            bus.timetablePrintout(entryStation, exitStation);
+            bus.timetablePrintout(entryStation, exitStation, timetableTextArea);
+            timetableTextArea.appendText("\nČas vožnje: " + bus.travelTime(entryStation, exitStation));
         }
         else if (vehicleType.equals("Vlak")){
             train = findTrain();
-            train.timetablePrintout(entryStation, exitStation);
+            train.timetablePrintout(entryStation, exitStation, timetableTextArea);
+            timetableTextArea.appendText("\nČas vožnje: " + train.travelTime(entryStation, exitStation));
         }
     }
     public void switchToMenuScene(ActionEvent event)throws IOException {
