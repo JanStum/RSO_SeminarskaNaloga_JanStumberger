@@ -1,8 +1,12 @@
 package com.example.rso_seminarska;
 
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public abstract class Vehicle {
@@ -83,15 +87,15 @@ public abstract class Vehicle {
     // Metoda za izpis voznega reda avtobusa
     // Vhodna podatka sta vstopna in izstopna postaja tipa String
     // Metoda ne vrne vračane vrednosti
-    public void timetablePrintout(String entryStation, String exitStation, TextArea timetableTextArea){
+    public void timetablePrintout(String entryStation, String exitStation, Label timetableLabel){
         String text = "";
         for (int i=0; i< station.size(); i++){
             if (station.get(i).equals(entryStation) || station.get(i).equals(exitStation))
-                text += "     Postaja:     " + station.get(i) + ",     prihod:     " + timetableHours.get(i) + "h" + timetableMinutes.get(i) + "min\n";
+                text += "     Postaja:     " + station.get(i) + ",     Prihod:     " + timetableHours.get(i) + "h" + timetableMinutes.get(i) + "min\n";
             else
-                text += "Postaja:     " + station.get(i) +  ",     prihod:     " + timetableHours.get(i) + "h" + timetableMinutes.get(i) + "min\n";
+                text += "Postaja:     " + station.get(i) +  ",     Prihod:     " + timetableHours.get(i) + "h" + timetableMinutes.get(i) + "min\n";
         }
-        timetableTextArea.setText(text);
+        timetableLabel.setText(text);
     }
     // Metoda za izračun časa vožnje, glede na uporabnikov vpis vstopne in izstopne postaje
     // Vhodna podatka sta vstopna in izstopna postaja
@@ -118,5 +122,5 @@ public abstract class Vehicle {
     }
     // Metoda za izpis vseh podatkov vozila
     // Metoda nima vhodnih ali izhodnih podatkov
-    public abstract void allDataPrintout(TextArea vehicleDataTextArea);
+    public abstract void allDataPrintout(Label vehicleDataLabel);
 }

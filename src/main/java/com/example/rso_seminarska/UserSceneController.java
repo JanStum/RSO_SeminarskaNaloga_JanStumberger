@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -22,7 +23,7 @@ public class UserSceneController implements Initializable {
     @FXML
     protected TextField entryStationTextField, exitStationTextField;
     @FXML
-    protected TextArea timetableTextArea;
+    protected Label timetableLabel;
     protected Parent root;
     protected Stage stage;
     protected Scene scene;
@@ -47,13 +48,13 @@ public class UserSceneController implements Initializable {
         Train train;
         if (vehicleType.equals("Avtobus")){
             bus = findBus();
-            bus.timetablePrintout(entryStation, exitStation, timetableTextArea);
-            timetableTextArea.appendText("\nČas vožnje: " + bus.travelTime(entryStation, exitStation));
+            bus.timetablePrintout(entryStation, exitStation, timetableLabel);
+            timetableLabel.setText(timetableLabel.getText() + "\nČas vožnje: " + bus.travelTime(entryStation, exitStation));
         }
         else if (vehicleType.equals("Vlak")){
             train = findTrain();
-            train.timetablePrintout(entryStation, exitStation, timetableTextArea);
-            timetableTextArea.appendText("\nČas vožnje: " + train.travelTime(entryStation, exitStation));
+            train.timetablePrintout(entryStation, exitStation, timetableLabel);
+            timetableLabel.setText(timetableLabel.getText() + "\nČas vožnje: " + train.travelTime(entryStation, exitStation));
         }
     }
     public void switchToMenuScene(ActionEvent event)throws IOException {

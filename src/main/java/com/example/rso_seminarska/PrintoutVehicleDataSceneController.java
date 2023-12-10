@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
@@ -21,7 +22,7 @@ public class PrintoutVehicleDataSceneController implements Initializable {
     @FXML
     protected String vehicleType;
     @FXML
-    protected TextArea vehicleDataTextArea;
+    protected Label vehicleDataLabel;
     protected int vehicleIndex;
     @FXML
     protected Parent root;
@@ -41,14 +42,14 @@ public class PrintoutVehicleDataSceneController implements Initializable {
         if (vehicleChoiceBox.getValue().startsWith("Tip vozila: Avtobus")){
             for (int i = 0; i < PublicTransportApplication.BUS.size(); i++){
                 if (vehicleChoiceBox.getValue().endsWith(PublicTransportApplication.BUS.get(i).getVehicleName())){
-                    PublicTransportApplication.BUS.get(i).allDataPrintout(vehicleDataTextArea);
+                    PublicTransportApplication.BUS.get(i).allDataPrintout(vehicleDataLabel);
                 }
             }
         }
         else if (vehicleChoiceBox.getValue().startsWith("Tip vozila: Vlak")){
             for (int i = 0; i < PublicTransportApplication.TRAIN.size(); i++){
                 if (vehicleChoiceBox.getValue().endsWith(PublicTransportApplication.TRAIN.get(i).getVehicleName())){
-                    PublicTransportApplication.TRAIN.get(i).allDataPrintout(vehicleDataTextArea);
+                    PublicTransportApplication.TRAIN.get(i).allDataPrintout(vehicleDataLabel);
                 }
             }
         }

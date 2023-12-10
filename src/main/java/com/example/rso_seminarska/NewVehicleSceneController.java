@@ -10,6 +10,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.net.URL;
@@ -47,7 +49,7 @@ public class NewVehicleSceneController implements Initializable{
     public void initialize(URL arg0, ResourceBundle arg1){
         vehicleTypeChoiceBox.getItems().addAll("Avtobus", "Vlak");
     }
-    public void create(ActionEvent event){
+    public void create(ActionEvent event) throws IOException {
 
         if (vehicleTypeChoiceBox.getValue().equals("Avtobus")){
             Bus bus = new Bus();
@@ -63,6 +65,7 @@ public class NewVehicleSceneController implements Initializable{
             bus.setTimetableMinutes((ArrayList<Integer>)arrivalMinutes.clone());
 
             PublicTransportApplication.BUS.add(bus);
+            bus.createTextFileFromBus();
             vehicleNameLabel.setText(null);
             driverNameLabel.setText(null);
             vehicleTypeChoiceBox.getSelectionModel().clearSelection();
@@ -86,6 +89,7 @@ public class NewVehicleSceneController implements Initializable{
             train.setTimetableMinutes((ArrayList<Integer>)arrivalMinutes.clone());
 
             PublicTransportApplication.TRAIN.add(train);
+            train.createTextFileFromTrain();
             vehicleNameLabel.setText(null);
             driverNameLabel.setText(null);
             vehicleTypeChoiceBox.getSelectionModel().clearSelection();

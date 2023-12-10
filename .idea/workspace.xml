@@ -5,10 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d285e06-cbcf-4643-983e-0b9b6fd306dd" name="Changes" comment="bla bla">
+      <change afterPath="$PROJECT_DIR$/Bus0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bus1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Train0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Train1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/Bus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/DeleteVehicleSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/DeleteVehicleSceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/NewVehicleSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/NewVehicleSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/PrintoutVehicleDataSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/PrintoutVehicleDataSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/PublicTransportApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/PublicTransportApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/Train.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/Train.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/UserSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/UserSceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rso_seminarska/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/rso_seminarska/UserScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/rso_seminarska/UserScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,30 +37,45 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;JanStum&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="9577a482-4c38-425e-a7b4-a15e9fc6adcf" />
+        <option name="url" value="https://github.com/JanStum/RSO_SeminarskaNaloga_JanStumberger.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2YhsVGHXl7YZEUSgBPwQO63YOWC" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Unnamed.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/K01-DM-07/AppData/Local/SceneBuilder/SceneBuilder.exe",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/K01-DM-07/AppData/Local/SceneBuilder/SceneBuilder.exe&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.43193716&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.rso_seminarska.PublicTransportApplication" />
@@ -74,13 +100,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-21.0.1-openjdk-21.0.1-8336523bb0d9-657b72ed" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -139,25 +158,19 @@
       <option name="project" value="LOCAL" />
       <updated>1701461766810</updated>
     </task>
-    <task id="LOCAL−00007" summary="bla bla">
-      <option name="closed" value="true" />
-      <created>1702035850660</created>
-      <option name="number" value="LOCAL−00007" />
-      <option name="presentableId" value="LOCAL−00007" />
-      <updated>1702035850660</updated>
-    </task>
-    <task id="LOCAL−00008" summary="bla bla">
-      <option name="closed" value="true" />
-      <created>1702035885210</created>
-      <option name="number" value="LOCAL−00008" />
-      <option name="presentableId" value="LOCAL−00008" />
-      <updated>1702035885210</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="bla bla" />
     <option name="LAST_COMMIT_MESSAGE" value="bla bla" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.io.BufferedWriter" memberName="nextChar" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

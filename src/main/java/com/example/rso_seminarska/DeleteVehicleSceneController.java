@@ -13,12 +13,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ResourceBundle;
 
 public class DeleteVehicleSceneController implements Initializable {
     @FXML
     protected ChoiceBox<String> vehicleChoiceBox;
-    protected String vehicleTypeChoice;
     protected int vehicleIndex;
     @FXML
     protected Parent root;
@@ -28,18 +30,34 @@ public class DeleteVehicleSceneController implements Initializable {
     protected Stage stage;
     public void initialize(URL arg0, ResourceBundle arg1){
         for (int i = 0; i < PublicTransportApplication.BUS.size(); i++){
-            vehicleChoiceBox.getItems().add("Tip vozila: avtobus     Ime vozila: " + PublicTransportApplication.BUS.get(i).getVehicleName());
+            vehicleChoiceBox.getItems().add("Tip vozila: Avtobus     Ime vozila: " + PublicTransportApplication.BUS.get(i).getVehicleName());
         }
         for (int i = 0; i < PublicTransportApplication.TRAIN.size(); i++) {
-            vehicleChoiceBox.getItems().add("Tip vozila: vlak     Ime vozila: " + PublicTransportApplication.TRAIN.get(i).getVehicleName());
+            vehicleChoiceBox.getItems().add("Tip vozila: Vlak     Ime vozila: " + PublicTransportApplication.TRAIN.get(i).getVehicleName());
         }
     }
     public void delete(ActionEvent event)throws IOException{
-        if (vehicleChoiceBox.getValue().startsWith("Tip vozila: avtobus")){
+        if (vehicleChoiceBox.getValue().startsWith("Tip vozila: Avtobus")){
+            for (int i = 0; i < PublicTransportApplication.BUS.size(); i++){
+                if (vehicleChoiceBox.getValue().contains(PublicTransportApplication.BUS.get(i).getVehicleName()))
+                    vehicleIndex = i;
+            }
             PublicTransportApplication.BUS.remove(vehicleIndex);
+
+            Path filePath = Paths.get("Bus" + vehicleIndex + ".txt");
+            Files.delete(filePath);
+            Bus.BUS_COUNTER --;
         }
-        else if (vehicleChoiceBox.getValue().startsWith("Tip vozila: vlak")){
+        else if (vehicleChoiceBox.getValue().startsWith("Tip vozila: Vlak")){
+            for (int i = 0; i < PublicTransportApplication.TRAIN.size(); i++){
+                if (vehicleChoiceBox.getValue().contains(PublicTransportApplication.TRAIN.get(i).getVehicleName()))
+                    vehicleIndex = i;
+            }
             PublicTransportApplication.TRAIN.remove(vehicleIndex);
+
+            Path filePath = Paths.get("Train" + vehicleIndex + ".txt");
+            Files.delete(filePath);
+            Train.TRAIN_COUNTER --;
         }
         vehicleChoiceBox.getItems().remove(vehicleChoiceBox.getValue());
         vehicleChoiceBox.getSelectionModel().clearSelection();
