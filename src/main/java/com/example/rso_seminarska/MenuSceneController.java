@@ -8,11 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class MenuSceneController {
@@ -23,7 +20,7 @@ public class MenuSceneController {
     protected Stage stage;
     protected Scene scene;
     protected Parent root;
-
+    // Metoda, ki spremeni sceno iz trenutne scene na sceno UserScene. Metoda se sproži ob pritisku na gumb
     public void userButton(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("UserScene.fxml"));
         root = loader.load();
@@ -32,6 +29,7 @@ public class MenuSceneController {
         stage.setScene(scene);
         stage.show();
     }
+    // Metoda, ki spremeni sceno iz trenutne scene na sceno AdministratorScene ob pogoju, da je vpisano geslo pravilno. Metoda se sproži ob pritisku na gumb
     public void administratorButton(ActionEvent event) throws IOException{
         if (administratorPasswordField.getText().equals(AdministratorSceneController.PASSWORD)){
             wrongPasswordLabel.setVisible(false);

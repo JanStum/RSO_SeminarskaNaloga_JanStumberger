@@ -9,9 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,16 +18,11 @@ public class PrintoutVehicleDataSceneController implements Initializable {
     @FXML
     protected ChoiceBox<String> vehicleChoiceBox;
     @FXML
-    protected String vehicleType;
-    @FXML
     protected Label vehicleDataLabel;
-    protected int vehicleIndex;
-    @FXML
     protected Parent root;
-    @FXML
     protected Scene scene;
-    @FXML
     protected Stage stage;
+    // Metoda, ki inicializira vrednosti vehicleChoiceBox
     public void initialize(URL arg0, ResourceBundle arg1){
         for (int i = 0; i < PublicTransportApplication.BUS.size(); i++){
             vehicleChoiceBox.getItems().add("Tip vozila: Avtobus     Ime vozila: " + PublicTransportApplication.BUS.get(i).getVehicleName());
@@ -38,6 +31,7 @@ public class PrintoutVehicleDataSceneController implements Initializable {
             vehicleChoiceBox.getItems().add("Tip vozila: Vlak     Ime vozila: " + PublicTransportApplication.TRAIN.get(i).getVehicleName());
         }
     }
+    // Metoda, ki izpiše vse podatke objekta tipa Train ali Bus, glede na kateri objekt izberemo. Metoda se sproži ob pritisku na gumb
     public void printoutVehicleData(ActionEvent event)throws IOException{
         if (vehicleChoiceBox.getValue().startsWith("Tip vozila: Avtobus")){
             for (int i = 0; i < PublicTransportApplication.BUS.size(); i++){
@@ -54,6 +48,7 @@ public class PrintoutVehicleDataSceneController implements Initializable {
             }
         }
     }
+    // Metoda, ki spremeni sceno iz trenutne scene na AdmininstratorScene. Metoda se sproži ob pritisku na gumb
     public void switchToAdministratorScene(ActionEvent event)throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("AdministratorScene.fxml"));
         root = loader.load();

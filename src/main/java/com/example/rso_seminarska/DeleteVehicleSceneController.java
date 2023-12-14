@@ -8,9 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -22,12 +20,10 @@ public class DeleteVehicleSceneController implements Initializable {
     @FXML
     protected ChoiceBox<String> vehicleChoiceBox;
     protected int vehicleIndex;
-    @FXML
     protected Parent root;
-    @FXML
     protected Scene scene;
-    @FXML
     protected Stage stage;
+    // Metoda, ki icializira vrednosti v vehicleChoiceBox
     public void initialize(URL arg0, ResourceBundle arg1){
         for (int i = 0; i < PublicTransportApplication.BUS.size(); i++){
             vehicleChoiceBox.getItems().add("Tip vozila: Avtobus     Ime vozila: " + PublicTransportApplication.BUS.get(i).getVehicleName());
@@ -36,6 +32,7 @@ public class DeleteVehicleSceneController implements Initializable {
             vehicleChoiceBox.getItems().add("Tip vozila: Vlak     Ime vozila: " + PublicTransportApplication.TRAIN.get(i).getVehicleName());
         }
     }
+    // Metoda, ki izbriše instanco razreda Bus ali Train in izbriše tekstovno datoteko, ki vsebuje podatke tega razreda. Metoda se sproži ob pritisku na gumb
     public void delete(ActionEvent event)throws IOException{
         if (vehicleChoiceBox.getValue().startsWith("Tip vozila: Avtobus")){
             for (int i = 0; i < PublicTransportApplication.BUS.size(); i++){
@@ -61,8 +58,8 @@ public class DeleteVehicleSceneController implements Initializable {
         }
         vehicleChoiceBox.getItems().remove(vehicleChoiceBox.getValue());
         vehicleChoiceBox.getSelectionModel().clearSelection();
-         // Zakaj da fak se ne izbriše selekcija. Z nekega razloga ne morem hkrati zbrisati selekcije in zbrisati elementa iz ChoiceBoxa, lahko pa vsako posebej
     }
+    // Metoda, ki spremeni sceno iz trenutne scene na sceno AdministatorScene. Metoda se sproži ob pritisku na gumb
     public void switchToAdministratorScene(ActionEvent event)throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("AdministratorScene.fxml"));
         root = loader.load();

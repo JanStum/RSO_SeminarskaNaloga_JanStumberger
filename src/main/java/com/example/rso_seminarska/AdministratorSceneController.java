@@ -21,6 +21,7 @@ public class AdministratorSceneController {
     protected Parent root;
     protected Stage stage;
     protected Scene scene;
+    // Metoda, ki spremeni sceno iz trenutne scene na NewVehicleScene. Metoda se sproži ob pritisku na gumb
     public void createNewVehicle(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("NewVehicleScene.fxml"));
         root = loader.load();
@@ -29,6 +30,7 @@ public class AdministratorSceneController {
         stage.setScene(scene);
         stage.show();
     }
+    // Metoda, ki spremeni sceno iz trenutne scene na DeleteVehicleScene. Metoda se sproži ob pritisku na gumb
     public void removeVehicle(ActionEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("DeleteVehicleScene.fxml"));
         root = loader.load();
@@ -37,16 +39,19 @@ public class AdministratorSceneController {
         stage.setScene(scene);
         stage.show();
     }
-    public void changePassword(ActionEvent event) throws IOException{
+    // Metoda, ki prikaže PasswordField, v katerega lahko vpišemo novo geslo, in gumb za potrditev novega gesla. Metoda se sproži ob pritisku na gumb
+    public void changePassword(ActionEvent event){
         newPasswordField.setVisible(true);
         confirmNewPasswordButton.setVisible(true);
     }
-    public void confirmNewPassword(ActionEvent event) throws IOException{
+    // Metoda za potrditev novega gesla. Metoda se sproži ob pritisku na gumb
+    public void confirmNewPassword(ActionEvent event){
         PASSWORD = newPasswordField.getText();
         newPasswordField.setText(null);
         newPasswordField.setVisible(false);
         confirmNewPasswordButton.setVisible(false);
     }
+    // Metoda, ki spremeni sceno iz trenutne scene na PrintoutVehicleScene. Metoda se sproži ob pritisku na gumb
     public void printoutVehicleData(ActionEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("PrintoutVehicleDataScene.fxml"));
         root = loader.load();
@@ -55,6 +60,7 @@ public class AdministratorSceneController {
         stage.setScene(scene);
         stage.show();
     }
+    // Metoda, ki spremeni sceno iz trenutne scene na MenuScene. Metoda se sproži ob pritisku na gumb
     public void switchToMenuScene(ActionEvent event)throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuScene.fxml"));
         root = loader.load();

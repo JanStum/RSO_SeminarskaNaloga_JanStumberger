@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -22,6 +21,7 @@ public class PublicTransportApplication extends Application {
 
     @Override
     @FXML
+    // Metoda, ki zažene program
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MenuScene.fxml")));
         Scene scene = new Scene(root);
@@ -29,11 +29,13 @@ public class PublicTransportApplication extends Application {
         stage.setScene(scene);
         stage.show();
     }
+    // Main metoda, ki kliče metode za ustvarjanje objektov tipa Bus in Train iz tekstovnih datotek in kliče metodo za zagon programa
     public static void main(String[] args) throws IOException {
         createBusFromTextFile();
         createTrainFromTextFile();
         launch();
     }
+    // Metoda za ustvarjanje objekta tipa Bus iz tekstovne datoteke
     public static void createBusFromTextFile()throws IOException{
         BufferedReader br;
         boolean fileExistence = true;
@@ -73,6 +75,7 @@ public class PublicTransportApplication extends Application {
 
         }
     }
+    // Metoda za ustvarjanje objekta tipa Train iz tekstovne datoteke
     public static void createTrainFromTextFile()throws IOException{
         BufferedReader br;
         boolean fileExistence = true;

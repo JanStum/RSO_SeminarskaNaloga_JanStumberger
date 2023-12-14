@@ -1,22 +1,12 @@
 package com.example.rso_seminarska;
-
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-
 public class Bus extends Vehicle{
     static int BUS_COUNTER = 0;
-    public Bus(String vehicleName, String driverName, ArrayList<String> station, ArrayList<String> daysOfDriving, ArrayList<Integer> timetableHours, ArrayList<Integer> timetableMinutes){
-
-    }
-    public Bus(){
-
-    }
     @Override
+    // Metoda za izpis vseh podatkov avtobusa v vehicleDataLabel
     public void allDataPrintout(Label vehicleDataLabel) {
         String text = "Tip vozila:     Avtobus\n";
         text += "Ime avtobusa:     " + vehicleName + "\n";
@@ -31,6 +21,7 @@ public class Bus extends Vehicle{
         }
         vehicleDataLabel.setText(text);
     }
+    // Metoda, ki iz instance razreda Bus naredi novo .txt datoteko, ki vsebuje vse lastnosti tega vozila, da jo lahko ob ponovnem zagonu programa pretvorimo nazaj v objekt
     public void createTextFileFromBus()throws IOException {
          BufferedWriter bw = new BufferedWriter(new FileWriter("Bus" + BUS_COUNTER + ".txt"));
          BUS_COUNTER ++;

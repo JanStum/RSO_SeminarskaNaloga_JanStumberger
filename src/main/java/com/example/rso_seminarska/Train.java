@@ -10,13 +10,8 @@ import java.util.ArrayList;
 
 public class Train extends Vehicle{
     static int TRAIN_COUNTER = 0;
-    public Train(String vehicleName, String driverName, ArrayList<String> station, ArrayList<String> daysOfDriving, ArrayList<Integer> timetableHours, ArrayList<Integer> timetableMinutes){
-
-    }
-    public Train(){
-
-    }
     @Override
+    // Metoda za izpis vseh podatkov vlaka v vehicleDataLabel
     public void allDataPrintout(Label vehicleDataLabel) {
         String text = "Tip vozila:     Vlak\n";
         text += "Ime vlaka:     " + vehicleName + "\n";
@@ -31,6 +26,7 @@ public class Train extends Vehicle{
         }
         vehicleDataLabel.setText(text);
     }
+    // Metoda, ki iz instance razreda Train naredi novo .txt datoteko, ki vsebuje vse lastnosti tega vozila, da jo lahko ob ponovnem zagonu programa pretvorimo nazaj v objekt
     public void createTextFileFromTrain()throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter("Train" + TRAIN_COUNTER + ".txt"));
         TRAIN_COUNTER ++;

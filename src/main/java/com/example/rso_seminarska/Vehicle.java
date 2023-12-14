@@ -1,12 +1,6 @@
 package com.example.rso_seminarska;
 
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public abstract class Vehicle {
@@ -75,8 +69,6 @@ public abstract class Vehicle {
     }
 
     // Metoda, ki primerja, če vpisani dan vožnje enak kot ta, ki ga je zapisal uporabnik
-    // Metoda sprejme parameter, ki določa dan vožnje in je tipa String
-    // Metoda vrne true, če je parameter enak enemu od dni vožne na keterega avtobus vozi in false, če ni
     public boolean compareDaysOfDriving(String dd){
         for (int i=0; i<daysOfDriving.size(); i++){
             if (daysOfDriving.get(i).equals(dd))
@@ -85,8 +77,6 @@ public abstract class Vehicle {
         return false;
     }
     // Metoda za izpis voznega reda avtobusa
-    // Vhodna podatka sta vstopna in izstopna postaja tipa String
-    // Metoda ne vrne vračane vrednosti
     public void timetablePrintout(String entryStation, String exitStation, Label timetableLabel){
         String text = "";
         for (int i=0; i< station.size(); i++){
@@ -98,8 +88,6 @@ public abstract class Vehicle {
         timetableLabel.setText(text);
     }
     // Metoda za izračun časa vožnje, glede na uporabnikov vpis vstopne in izstopne postaje
-    // Vhodna podatka sta vstopna in izstopna postaja
-    // Izhodni podatek je čas vožnje tipa String
     public String travelTime(String entryStation, String exitStation){
         int minuend = 0; int subtrahend = 0;
         int difference, hourDifference, minuteDifference;
@@ -121,6 +109,5 @@ public abstract class Vehicle {
         return hourDifference + "h" + minuteDifference + "min";
     }
     // Metoda za izpis vseh podatkov vozila
-    // Metoda nima vhodnih ali izhodnih podatkov
     public abstract void allDataPrintout(Label vehicleDataLabel);
 }

@@ -9,10 +9,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -29,11 +27,13 @@ public class UserSceneController implements Initializable {
     protected Scene scene;
     protected String vehicleType, weekday, entryStation, exitStation;
 
+    // Metoda, ki inicializira vrednost za vehicleChoiceBox in weekdayChoiceBox
     public void initialize(URL arg0, ResourceBundle arg1){
         vehicleTypeChoiceBox.getItems().addAll("Avtobus", "Vlak");
         weekdayChoiceBox.getItems().addAll("Ponedeljek", "Torek", "Sreda", "Četrtek", "Petek", "Sobota", "Nedelja");
     }
-    public void showTimetable(ActionEvent event)throws IOException {
+    // Metoda, ki uporabniku v timetableLabel zapiše celoten spored vožnje vlaka ali avtobusa in čas vožnje glede na izbrane postaje. Metoda se sproži ob pritisku na gumb
+    public void showTimetable(ActionEvent event) {
         vehicleType = vehicleTypeChoiceBox.getValue();
         entryStation = entryStationTextField.getText();
         exitStation = exitStationTextField.getText();
@@ -57,6 +57,7 @@ public class UserSceneController implements Initializable {
             timetableLabel.setText(timetableLabel.getText() + "\nČas vožnje: " + train.travelTime(entryStation, exitStation));
         }
     }
+    // Metoda, ki iz trenutne scene zamenja sceno na MenuScene. Metoda se sproži ob pritisku na gumb
     public void switchToMenuScene(ActionEvent event)throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuScene.fxml"));
         root = loader.load();
@@ -65,6 +66,7 @@ public class UserSceneController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    // Metoda, ki poišče objekt tipa Bus, ki se ujema po podatkih, ki smo jih vnesli (vhodni postaji, izhodni postaji in dnevu v tednu) in ga vrne. Metoda se sproži ob pritisku na gumb
     public Bus findBus(){
         for (int i = 0; i < PublicTransportApplication.BUS.size(); i++){
             Bus bus = PublicTransportApplication.BUS.get(i);
@@ -74,6 +76,7 @@ public class UserSceneController implements Initializable {
         }
         return new Bus();
     }
+    // Metoda, ki poišče objekt tipa Train, ki se ujema po podatkih, ki smo jih vnesli (vhodni postaji, izhodni postaji in dnevu v tednu) in ga vrne. Metoda se sproži ob pritisku na gumb
     public Train findTrain(){
         for (int i = 0; i < PublicTransportApplication.TRAIN.size(); i++){
             Train train = PublicTransportApplication.TRAIN.get(i);
