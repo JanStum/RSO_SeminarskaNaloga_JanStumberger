@@ -9,6 +9,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
+
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -43,6 +45,13 @@ public class DeleteVehicleSceneController implements Initializable {
 
             Path filePath = Paths.get("Bus" + vehicleIndex + ".txt");
             Files.delete(filePath);
+            for (int i = vehicleIndex+1; i <= PublicTransportApplication.BUS.size(); i++){
+                File file = new File("Bus" + i + ".txt");
+                if(file.exists()) {
+                    File fileNew = new File("Bus" + (i-1) + ".txt");
+                    file.renameTo(fileNew);
+                }
+            }
             Bus.BUS_COUNTER --;
         }
         else if (vehicleChoiceBox.getValue().startsWith("Tip vozila: Vlak")){
@@ -54,6 +63,13 @@ public class DeleteVehicleSceneController implements Initializable {
 
             Path filePath = Paths.get("Train" + vehicleIndex + ".txt");
             Files.delete(filePath);
+            for (int i = vehicleIndex+1; i <= PublicTransportApplication.TRAIN.size(); i++){
+                File file = new File("Train" + i + ".txt");
+                if(file.exists()) {
+                    File fileNew = new File("Train" + (i-1) + ".txt");
+                    file.renameTo(fileNew);
+                }
+            }
             Train.TRAIN_COUNTER --;
         }
         vehicleChoiceBox.getItems().remove(vehicleChoiceBox.getValue());
